@@ -1,0 +1,24 @@
+.carousel {
+  margin-top: 6rem;
+}
+.carouselImage {
+  height: 25rem;
+  width: 100%;
+}
+
+h3 {
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+@media (min-width: 1100px) {
+  .carouselImage {
+    height: 28rem;
+  }
+  .carousel {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,13 @@
+.backGreenBoard {
+  background-image: url("../../Images//greenBoard.jpg");
+  color: white;
+  font: bold !important;
+}
+
+h6 {
+  color: white;
+}
+
+p {
+  color: white;
+}

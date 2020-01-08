@@ -1,0 +1,9 @@
+.display {
+    display: inline-block;
+    padding: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin: 1rem;
+    text-align: center;
+    color: wheat !important;
+}

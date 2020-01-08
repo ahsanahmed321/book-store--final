@@ -1,0 +1,16 @@
+.tab {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.tabItem {
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 2px;
+}
