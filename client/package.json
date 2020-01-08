@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "http://ahsanahmed321.github.io/bookstore",
+  "homepage": "https://bookstore321.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.4.3",
