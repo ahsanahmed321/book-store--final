@@ -44,27 +44,27 @@ class AboutUs extends Component {
         <Row>
           <Col xs={{ span: 0, offset: 2 }} md={4}>
             <EmailIcon style={{ color: "white" }} />
-            <p>bookworms.info@gmail.com</p>
+            <p className={classes.p}>bookworms.info@gmail.com</p>
           </Col>
           <Col xs={{ span: 0, offset: 2 }} md={4}>
             <FacebookIcon style={{ color: "white" }} />
-            <p>BookWorms/Facebook.com</p>
+            <p className={classes.p}>BookWorms/Facebook.com</p>
           </Col>
           <Col xs={{ span: 0, offset: 2 }} md={4}>
             <LinkedInIcon style={{ color: "white" }} />
-            <p>BookWorms/LinkedIn.com</p>
+            <p className={classes.p}>BookWorms/LinkedIn.com</p>
           </Col>
           <Col xs={{ span: 0, offset: 2 }} md={4}>
             <WhatsAppIcon style={{ color: "white" }} />
-            <p>0312-00234334</p>
+            <p className={classes.p}>0312-00234334</p>
           </Col>
           <Col xs={{ span: 0, offset: 2 }} md={4}>
             <CallIcon style={{ color: "white" }} />
-            <p>021-1234124/24311514</p>
+            <p className={classes.p}>021-1234124/24311514</p>
           </Col>
           <Col xs={{ span: 0, offset: 2 }} md={4}>
             <TwitterIcon style={{ color: "white" }} />
-            <p>BookWorms/Twitter.com</p>
+            <p className={classes.p}>BookWorms/Twitter.com</p>
           </Col>
         </Row>
       </Container>

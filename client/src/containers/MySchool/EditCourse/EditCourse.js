@@ -35,6 +35,19 @@ class EditCourse extends Component {
       chemistry: "",
       biology: "",
       science: ""
+    },
+
+    prices: {
+      mathsPrice: "",
+      englishPrice: "",
+      urduPrice: "",
+      sindhiPrice: "",
+      islamiatPrice: "",
+      computerPrice: "",
+      physicsPrice: "",
+      chemistryPrice: "",
+      biologyPrice: "",
+      sciencePrice: ""
     }
   };
 
@@ -158,6 +171,17 @@ class EditCourse extends Component {
     }));
   };
 
+  onChangePriceHandler = e => {
+    e.persist();
+
+    this.setState(prevState => ({
+      prices: {
+        ...prevState.prices,
+        [e.target.name]: e.target.value
+      }
+    }));
+  };
+
   sumbitHandler = () => {
     const newClass = {
       class: this.state.books.class,
@@ -170,7 +194,17 @@ class EditCourse extends Component {
       physics: this.state.books.physics,
       chemistry: this.state.books.chemistry,
       biology: this.state.books.biology,
-      science: this.state.books.science
+      science: this.state.books.science,
+      mathsPrice: this.state.prices.mathsPrice,
+      englishPrice: this.state.prices.englishPrice,
+      urduPrice: this.state.prices.urduPrice,
+      sindhiPrice: this.state.prices.sindhiPrice,
+      islamiatPrice: this.state.prices.islamiatPrice,
+      computerPrice: this.state.prices.computerPrice,
+      physicsPrice: this.state.prices.physicsPrice,
+      chemistryPrice: this.state.prices.chemistryPrice,
+      biologyPrice: this.state.prices.biologyPrice,
+      sciencePrice: this.state.prices.sciencePrice
     };
 
     axios
@@ -304,6 +338,9 @@ class EditCourse extends Component {
               name="maths"
               subject="Maths"
               value={this.state.books.maths}
+              priceName="mathsPrice"
+              price={this.state.prices.mathsPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.englishSwitch ? (
@@ -312,6 +349,9 @@ class EditCourse extends Component {
               name="english"
               subject="English"
               value={this.state.books.english}
+              priceName="englishPrice"
+              price={this.state.prices.englishPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.urduSwitch ? (
@@ -320,6 +360,9 @@ class EditCourse extends Component {
               name="urdu"
               subject="Urdu"
               value={this.state.books.urdu}
+              priceName="urduPrice"
+              price={this.state.prices.urduPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.sindhiSwitch ? (
@@ -328,6 +371,9 @@ class EditCourse extends Component {
               name="sindhi"
               subject="Sindhi"
               value={this.state.books.sindhi}
+              priceName="sindhiPrice"
+              price={this.state.prices.sindhiPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.islamiatSwitch ? (
@@ -336,6 +382,9 @@ class EditCourse extends Component {
               name="islamiat"
               subject="Islamiat"
               value={this.state.books.islamiat}
+              price="islamiatPrice"
+              price={this.state.prices.islamiatPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.computerSwitch ? (
@@ -344,6 +393,9 @@ class EditCourse extends Component {
               name="computer"
               subject="Computer"
               value={this.state.books.computer}
+              priceName="computerPrice"
+              price={this.state.prices.computerPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.physicsSwitch ? (
@@ -352,6 +404,9 @@ class EditCourse extends Component {
               name="physics"
               subject="Physics"
               value={this.state.books.physics}
+              priceName="physicsPrice"
+              price={this.state.prices.physicsPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.chemistrySwitch ? (
@@ -360,6 +415,9 @@ class EditCourse extends Component {
               name="chemistry"
               subject="Chemistry"
               value={this.state.books.chemistry}
+              priceName="chemistryPrice"
+              price={this.state.prices.chemistryPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.biologySwitch ? (
@@ -368,6 +426,9 @@ class EditCourse extends Component {
               name="biology"
               subject="Biology"
               value={this.state.books.biology}
+              priceName="biologyPrice"
+              price={this.state.prices.biologyPrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
           {this.state.switches.scienceSwitch ? (
@@ -376,6 +437,9 @@ class EditCourse extends Component {
               name="science"
               subject="Science"
               value={this.state.books.science}
+              priceName="sciencePrice"
+              price={this.state.prices.sciencePrice}
+              priceChanged={this.onChangePriceHandler}
             />
           ) : null}
         </div>

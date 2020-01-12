@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const cors = require("cors");
 const passport = require("passport");
-const path = require("path");
 
 const users = require("./routes/api/users");
 const schools = require("./routes/api/schools");
@@ -44,14 +43,5 @@ app.use("/api/schools", schools);
 app.use("/api/payments", payments);
 
 const port = process.env.PORT || 5000;
-
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
 
 app.listen(port, () => console.log(`Server is listening on port ${port}`));

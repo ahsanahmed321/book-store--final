@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Card, CardBody } from "reactstrap";
 import styles from "./Book.module.css";
+import { Button } from "react-bootstrap";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles(theme => ({
   heading: {
     color: "white",
     fontSize: theme.typography.pxToRem(15),
+    fontWeight: "bold",
     fontWeight: theme.typography.fontWeightRegular
   }
 }));
@@ -46,20 +48,26 @@ export default function SimpleExpansionPanel(props) {
 
   return (
     <div className={classes.root}>
-      <ExpansionPanel className={styles.backBlackBoard}>
+      <ExpansionPanel className={styles.expansion}>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>{props.class}</Typography>
+          <div style={{ width: "100%" }}>
+            <Typography className={classes.heading}>{props.class}</Typography>
+          </div>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Card className={styles.backBlackBoard}>{booksDisplay}</Card>
+        <ExpansionPanelDetails className={styles.expansionDetail}>
+          <Card className={styles.expansionCard}>{booksDisplay}</Card>
 
-          <button id={JSON.stringify(buttonId)} onClick={props.clicked}>
+          <Button
+            variant="success"
+            id={JSON.stringify(buttonId)}
+            onClick={props.clicked}
+          >
             Order
-          </button>
+          </Button>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

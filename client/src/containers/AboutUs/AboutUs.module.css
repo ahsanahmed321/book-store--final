@@ -1,10 +1,8 @@
-p {
-    display: inline-block;
-    margin: 16px;
+.p {
+  display: inline-block;
+  margin: 16px;
 }
 
-
-
 .fontSet {
-    color: white;
+  color: white;
 }

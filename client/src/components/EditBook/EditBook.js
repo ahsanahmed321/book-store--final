@@ -14,18 +14,21 @@ const editBook = props => {
       <Form style={{ color: "white" }}>
         <FormGroup>
           <Row>
-            <Col sm="2" md="2">
+            <Col sm="12" md="7">
               <Label>{props.subject}</Label>
-            </Col>
-            <Col sm="8" md="8">
               <Input
                 onChange={props.changed}
                 name={props.name}
                 value={realValue}
               ></Input>
             </Col>
-            <Col sm="2" md="2">
-              <Button>X</Button>
+            <Col sm="12" md="5">
+              <Label>Price</Label>
+              <Input
+                name={props.priceName}
+                value={props.price}
+                onChange={props.priceChanged}
+              ></Input>
             </Col>
           </Row>
         </FormGroup>

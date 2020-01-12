@@ -78,7 +78,9 @@ router.post(
   passport.authenticate("jwt-user", { session: false }),
   (req, res) => {
     const newCourse = {};
+    const newPrice = {};
     newCourse.class = req.body.class;
+    newPrice.class = req.body.class;
 
     if (req.body.maths) newCourse.maths = req.body.maths;
     if (req.body.english) newCourse.english = req.body.english;
@@ -90,6 +92,18 @@ router.post(
     if (req.body.chemistry) newCourse.chemistry = req.body.chemistry;
     if (req.body.biology) newCourse.biology = req.body.biology;
     if (req.body.science) newCourse.science = req.body.science;
+
+    if (req.body.mathsPrice) newPrice.mathsPrice = req.body.mathsPrice;
+    if (req.body.englishPrice) newPrice.englishPrice = req.body.englishPrice;
+    if (req.body.urduPrice) newPrice.urduPrice = req.body.urduPrice;
+    if (req.body.sindhiPrice) newPrice.sindhiPrice = req.body.sindhiPrice;
+    if (req.body.islamiatPrice) newPrice.islamiatPrice = req.body.islamiatPrice;
+    if (req.body.computerPrice) newPrice.computerPrice = req.body.computerPrice;
+    if (req.body.physicsPrice) newPrice.physicsPrice = req.body.physicsPrice;
+    if (req.body.chemistryPrice)
+      newPrice.chemistryPrice = req.body.chemistryPrice;
+    if (req.body.biologyPrice) newPrice.biologyPrice = req.body.biologyPrice;
+    if (req.body.sciencePrice) newPrice.sciencePrice = req.body.sciencePrice;
 
     School.findOne({ user: req.user.id }).then(school => {
       if (school) {
@@ -103,7 +117,7 @@ router.post(
                 user: req.user.id,
                 "books.class": req.body.class
               },
-              { $set: { "books.$": newCourse } },
+              { $set: { "books.$": newCourse, "prices.$": newPrice } },
               { new: true }
             )
               .then(updatedSchool => res.json(updatedSchool))
@@ -111,6 +125,7 @@ router.post(
           } else {
             // add to books
             school.books.unshift(newCourse);
+            school.prices.unshift(newPrice);
             // save to db
             school.save().then(school => res.json(school));
           }

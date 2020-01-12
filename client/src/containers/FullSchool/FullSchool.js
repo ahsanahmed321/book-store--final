@@ -90,7 +90,9 @@ class FullSchool extends Component {
 
     return (
       <div>
-        <h1>{this.props.match.params.schoolName}</h1>
+        <h1 style={{ textAlign: "center", color: "White" }}>
+          {this.props.match.params.schoolName}
+        </h1>
         {bookDetails}
         {modal}
       </div>

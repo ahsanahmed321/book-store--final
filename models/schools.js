@@ -56,6 +56,45 @@ const SchoolSchema = new Schema({
     }
   ],
 
+  prices: [
+    {
+      class: {
+        type: String,
+        required: true
+      },
+
+      mathsPrice: {
+        type: Number
+      },
+      englishPrice: {
+        type: Number
+      },
+      urduPrice: {
+        type: Number
+      },
+      sindhiPrice: {
+        type: Number
+      },
+      islamiatPrice: {
+        type: Number
+      },
+      computerPrice: {
+        type: Number
+      },
+      physicsPrice: {
+        type: Number
+      },
+      chemistryPrice: {
+        type: Number
+      },
+      biologyPrice: {
+        type: Number
+      },
+      sciencePrice: {
+        type: Number
+      }
+    }
+  ],
   date: {
     type: Date,
     default: Date.now

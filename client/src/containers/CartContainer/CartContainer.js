@@ -2,7 +2,7 @@ import React from "react";
 import Order from "../../components/Order/Order";
 import { Component } from "react";
 import { connect } from "react-redux";
-//import {Row} from 'reactstrap'
+//import { Row } from "reactstrap";
 import { Button } from "reactstrap";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { Form, FormGroup, Label, Input } from "reactstrap";
@@ -120,8 +120,7 @@ class CartContainer extends Component {
     } else {
       pMethod = (
         <Button color="success" onClick={this.confirmOrderHandler}>
-          {" "}
-          Confirm{" "}
+          Confirm
         </Button>
       );
     }
